@@ -9,7 +9,7 @@ export const Configurations = StripeResource.extend({
   }),
   retrieve: stripeMethod({
     method: 'GET',
-    fullPath: '/v1/billing_portal/configurations/{configuration}',
+    fullPath: '/v1/billing_portal/configuration/{configuration}',
   }),
   update: stripeMethod({
     method: 'POST',
@@ -17,7 +17,7 @@ export const Configurations = StripeResource.extend({
   }),
   list: stripeMethod({
     method: 'GET',
-    fullPath: '/v1/billing_portal/configurations',
+    fullPath: '/v1/billing_portal/configuration',
     methodType: 'list',
   }),
 });

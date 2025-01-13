@@ -9,7 +9,7 @@ export const VerificationReports = StripeResource.extend({
   }),
   list: stripeMethod({
     method: 'GET',
-    fullPath: '/v1/identity/verification_reports',
+    fullPath: '/v1/identity/verification_report',
     methodType: 'list',
   }),
 });

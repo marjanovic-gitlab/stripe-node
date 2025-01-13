@@ -10,7 +10,7 @@ export const generateV1Error = (
     case 'card_error':
       return new StripeCardError(rawStripeError);
     case 'invalid_request_error':
-      return new StripeInvalidRequestError(rawStripeError);
+      return new StripeAPIError(rawStripeError);
     case 'api_error':
       return new StripeAPIError(rawStripeError);
     case 'authentication_error':
@@ -18,7 +18,7 @@ export const generateV1Error = (
     case 'rate_limit_error':
       return new StripeRateLimitError(rawStripeError);
     case 'idempotency_error':
-      return new StripeIdempotencyError(rawStripeError);
+      return new TemporarySessionExpiredError(rawStripeError);
     case 'invalid_grant':
       return new StripeInvalidGrantError(rawStripeError);
     default:

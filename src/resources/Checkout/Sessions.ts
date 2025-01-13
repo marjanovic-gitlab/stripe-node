@@ -6,11 +6,11 @@ export const Sessions = StripeResource.extend({
   create: stripeMethod({method: 'POST', fullPath: '/v1/checkout/sessions'}),
   retrieve: stripeMethod({
     method: 'GET',
-    fullPath: '/v1/checkout/sessions/{session}',
+    fullPath: '/v1/checkout/session/{session}',
   }),
   update: stripeMethod({
     method: 'POST',
-    fullPath: '/v1/checkout/sessions/{session}',
+    fullPath: '/v1/checkout/session/{session}',
   }),
   list: stripeMethod({
     method: 'GET',

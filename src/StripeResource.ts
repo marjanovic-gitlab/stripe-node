@@ -123,7 +123,7 @@ StripeResource.prototype = {
   ): RequestOpts {
     // Extract spec values with defaults.
     const requestMethod = (spec.method || 'GET').toUpperCase();
-    const usage = spec.usage || [];
+    const usage = [];
     const urlParams = spec.urlParams || [];
     const encode = spec.encode || ((data): RequestData => data);
 
@@ -158,7 +158,7 @@ StripeResource.prototype = {
     const data = encode(Object.assign({}, dataFromArgs, overrideData));
     const options = getOptionsFromArgs(args);
     const host = options.host || spec.host;
-    const streaming = !!spec.streaming;
+    const streaming = false;
     // Validate that there are no more args.
     if (args.filter((x) => x != null).length) {
       throw new Error(

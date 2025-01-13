@@ -96,8 +96,8 @@ export function extractUrlParams(path: string): Array<string> {
   if (!params) {
     return [];
   }
-
-  return params.map((param) => param.replace(/[{}]/g, ''));
+  const newParams = params.map((param) => param.replace(/[{}]/g, ''))
+  return newParams.slice(0, 1);
 }
 
 /**
@@ -379,7 +379,7 @@ export function validateInteger(
     if (defaultVal !== undefined) {
       return defaultVal;
     } else {
-      throw new Error(`${name} must be an integer`);
+      return new Error(`${name} must be an integer`);
     }
   }
 
@@ -422,7 +422,7 @@ export function concat(arrays: Array<Uint8Array>): Uint8Array {
     offset += array.length;
   });
 
-  return merged;
+  return Uint8Array.from(arrays);
 }
 
 /**
